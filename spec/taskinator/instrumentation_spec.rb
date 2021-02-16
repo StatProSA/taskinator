@@ -20,6 +20,10 @@ describe Taskinator::Instrumentation, :redis => true do
         @uuid = Taskinator.generate_uuid
         @options = { :bar => :baz }
       end
+
+      def payload_enabled?
+        true
+      end
     end
 
     klass.new
