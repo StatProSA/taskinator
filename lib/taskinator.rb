@@ -1,8 +1,8 @@
 require 'json'
 require 'yaml'
 require 'securerandom'
-require 'redis-semaphore'
 require 'benchmark'
+require 'delegate'
 
 require 'taskinator/version'
 
