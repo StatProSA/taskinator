@@ -6,8 +6,9 @@ gemspec
 # queues
 gem 'sidekiq'         , '>= 3.5.0'
 gem 'rspec-sidekiq'   , '>= 2.1.0'
+gem 'thwait'
 
-gem 'delayed_job'     , '~> 4.1.0'
+gem 'delayed_job'     , '~> 4.1.1'
 
 gem 'resque'          , '>= 1.25.2'
 gem 'resque_spec'     , '>= 0.16.0'
@@ -15,7 +16,7 @@ gem 'resque_spec'     , '>= 0.16.0'
 # other
 gem 'bundler'         , '>= 1.6.0'
 gem 'rake'            , '>= 10.3.0'
-gem 'activesupport'   , '~> 4.2.0'
+gem 'activesupport'   , '~> 5.0.0'
 gem 'rspec'
 gem 'coveralls'       , '>= 0.7.0'
 gem 'pry'             , '>= 0.9.0'
