@@ -37,12 +37,17 @@ module Taskinator
       payload_for(:failed, { :exception => exception.to_s, :backtrace => exception.backtrace }.merge(additional))
     end
 
+    # disabled by default for performance considerations
+    def payload_enabled?
+      false
+    end
+
     private
 
     def payload_for(state, additional={})
 
-      # performance testing, omit completely for now...
-      return {}
+      # return empty payload for performance considerations
+      return {} unless payload_enabled?
 
       # need to cache here, since this method hits redis, so can't be part of multi statement following
       process_key = self.process_key

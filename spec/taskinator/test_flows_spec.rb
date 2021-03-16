@@ -162,6 +162,9 @@ describe TestFlows do
 
         end
 
+        # enable instrumentation payload
+        allow_any_instance_of(Taskinator::Instrumentation).to receive(:payload_enabled?).and_return(true)
+
         allow(Taskinator).to receive(:instrumenter).and_return(instrumenter)
         expect(instrumenter).to receive(:instrument).at_least(task_count).times.and_call_original
 
@@ -182,6 +185,11 @@ describe TestFlows do
   end
 
   describe "instrumentation" do
+    before do
+      # enable instrumentation payload
+      allow_any_instance_of(Taskinator::Instrumentation).to receive(:payload_enabled?).and_return(true)
+    end
+
     describe "task" do
       before do
         # override enqueue
